@@ -27,17 +27,7 @@ Let's get started!
 
 # Grading Rubric
 
-We will grade this workshop using the contents and history of your Git
-repository.
-
-- 10% Step 03+04: `commit`ted an edit to `README.md`, and `push`ed it to GitHub.
-- 10% Step 05: `add`ed `data.txt` to the repository
-- 10% Step 06: `mv`ed `data.txt` to `data.dat`
-- 10% Step 07: valid screenshot of `git pull` output (added/committed/pushed in Step 12)
-- 20% Step 08: caused (and handled) a merge conflict
-- 10% Step 09: valid screenshot of destructed repository (added/committed/pushed in Step 12)
-- 20% Step 10: removed `password.txt` from the repository using a `rebase`
-- 10% Step 11: `revert`ed a mistake
+Please see the [rubric](workshop-02-rubric.md) for the details.
 
 # Step 00: Recall how to use the terminal
 
