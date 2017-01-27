@@ -17,7 +17,7 @@ its log to see how productive you/your team is. We will be using these metrics
 ourselves to ensure that everyone is contributing to team projects.
 
 In this workshop, you will learn how to use the version control system
-[Git](https://git-scm.com) effectively in a group setting. While Git has a
+[Git](https://git-scm.com) effectively in a group setting. While Git has
 many commands and features, this workshop will only cover the few core Git
 commands that developers actually use on a regular basis.
 
@@ -77,51 +77,23 @@ for us, and GitHub Classroom to manage all assignment repositories. For each
 workshop, we will provide you with an existing Git repository that you will
 use for that workshop.
 
-On [Piazza](https://piazza.com), we stickied a post with a link to acquire your
-repository. Click that link now.
+To get started you need to *fork* the GitHub repository for Workshop 2. To do that click on the "Fork" button, it is on the upper right-hand part of the github page next to "Unwatch" and "Star":
 
-If you are not in the class and want to follow along, you can [fork the GitHub repository manually.](https://github.com/umass-cs-326/Workshop2)
+<img src="../images/fork-workshop-02.png" width="100%" />
 
-After clicking that link, Classroom for GitHub will request access to the
-email address associated with your GitHub account:
+After you click on the "Fork" button you will be asked "Where should we fork this repository":
 
-<img src="../images/classroom_authorize.png" width="100%" />
+<img src="../images/where-fork-workshop-02.png" width="100%" />
 
-*(Note: If you have not yet confirmed your GitHub account's email address,
-GitHub will tell you to do that first!)*
+You should click on the location that matches your GitHub username. After you do so you will need to wait for GitHub to fork this repository to your own GitHub user account. You will see something like this:
 
-Click *Authorize application* to continue.
+<img src="../images/forking-wait-workshop-02.png" width="100%" />
 
-Next, Classroom for GitHub will request that you accept this assignment, which
-gives you access to your own personal Workshop 1 Git repository:
-
-<img src="../../img/get_repo.png" width="100%" />
-
-*(Note: We forgot to name the Git repository "Workshop 2". Now it's too late for us to change it. We refer to this assignment as "Workshop 1" from this point forwards.)*
-
-Click *Accept this assignment* to continue.
-
-Once accepted, Classroom for GitHub will give you a link to your GitHub
-repository:
-
-<img src="../../img/repo_got.png" width="100%"  />
-
-Click on the link to travel to your very own Workshop 1 Git repository:
-
-<img src="../../img/new_repo.png" width="100%"  />
-
-*(Note: There's a file called password.txt that looks sketchy, but it is
-supposed to be there. We will explain further later on.)*
+After a few seconds, it will show you the same repository that now resides under your own GitHub user account. You essentially copied it to your own account and can now proceed to work on it by following the instructions in the rest of this workshop. This repository should be public. It is fine if others who are doing the same workshop can see your work - the commits you will do below ensure that you do your own work.
 
 GitHub creates an *Issue Tracker* and a  *Wiki* for each Git repository, and
 provides neat data analytics under *Pulse* and *Graph*. We will not cover these
 items now, but feel free to check them out in your spare time!
-
-Oh, and in the upper-right corner of the screenshot, you'll notice that 3 people
-are *watching* your repository. If you click on the number, you'll see that
-that's just us, creeping on your every code change:
-
-<img src="../../img/creeping.png" width="100%" />
 
 # Step 02: `clone` the repository
 
@@ -130,20 +102,18 @@ folder**. We are going to use Git now.
 
 *Reminder: If you are using Windows, you should use the "Node.js Command Prompt" as your terminal.*
 
-The `git clone` command tells git to create a copy of a remote repository.
-Here, it will create a copy of your Workshop 1 repository from GitHub.
+The `git clone` command tells git to create a *copy* of a remote repository.
+It will create a copy of your Workshop 2 repository from GitHub on your local machine. In your terminal, type this in your terminal:
 
-Get the URL to your repository from GitHub. It's located in the outlined box
-in the following screenshot:
-
-<img src="../../img/repo_url.png" width="100%" />
-
-Then, in your terminal, type `git clone [URL]`. You may be asked to enter your
-GitHub username and password:
-
+```bash
+$ git clone https://github.com/GITHUB-USERNAME/Workshop2.git
 ```
-$ git clone https://github.com/umass-cs-326/workshop-1-git-CS326Student.git
-Cloning into 'workshop-1-git-CS326Student'...
+
+You will need to replace GITHUB-USERNAME with your GitHub username. You may also be asked to enter your GitHub username and password:
+
+```bash
+$ git clone https://github.com/GITHUB-USERNAME/Workshop2.git
+Cloning into 'Workshop2'...
 remote: Counting objects: 6, done.
 remote: Compressing objects: 100% (4/4), done.
 remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0
@@ -151,15 +121,14 @@ Unpacking objects: 100% (6/6), done.
 Checking connectivity... done.
 ```
 
-The `clone` command will create a new folder called
-`workshop-1-git-[github username]` in the current folder. Use `cd` to change the
-current directory to that folder:
+The `clone` command will create a new folder called `Workshop2` in the current folder. Use `cd` to change the current directory to that folder:
 
-```
-$ cd workshop-1-git-CS326Student/
+```bash
+$ cd Workshop2/
 $ ls
 README.md	password.txt
 ```
+
 *(Note: Windows users will need to type `dir` for a folder listing, not `ls`.)*
 
 Any `git` commands performed while inside this folder will be applied to the
@@ -170,7 +139,7 @@ repository clone in this folder.
 Open up the repository folder in Atom Editor, select `README.md`, change the
 text inside, and save your changes.
 
-<img src="../../img/text_change.png" width="100%" />
+<img src="../images/text_change.png" width="100%" />
 
 *(We won't award any extra credit for nice comments, even if they are true.)*
 
@@ -195,12 +164,12 @@ Git will pop open the Atom Editor, requesting that you add a commit message.
 All of your commit messages are included in your repository, so [don't type
 anything you'd regret](http://www.commitlogsfromlastnight.com).
 
-<img src="../../img/commit_msg.png" width="100%" />
+<img src="../images/commit_msg.png" width="100%" />
 
 When you have finished typing a commit message, save the file, and close Atom.
 Back on the command line, Git will report that your commit succeeded:
 
-```
+```bash
 $ git commit -a
 [master 82fb093] Complimenting Tim Richards in the README
  1 file changed, 2 insertions(+)
@@ -213,7 +182,7 @@ workshop.
 
 You can see this commit message, and its full hash, at the top of the `git log`:
 
-```
+```bash
 $ git log
 commit 82fb0939eff681d5aaece429227def4dc9e464d5
 Author: John Vilk <jvilk@cs.umass.edu>
@@ -227,7 +196,7 @@ Date:   Tue Dec 29 16:35:25 2015 -0500
 If you look at your repository at GitHub.com, you'll notice that `README.md`
 doesn't contain your changes!
 
-<img src="../../img/new_repo.png" width="100%" />
+<img src="../images/new_repo.png" width="100%" />
 
 *That's the old README! What gives?*
 
@@ -238,7 +207,7 @@ of the **entire** Git repository, including all previous file changes. Git hides
 this data from you in the `.git` subdirectory of your `workshop-1-git` folder
 (which you should *never* mess with):
 
-```
+```bash
 $ cd .git
 $ ls
 COMMIT_EDITMSG	config		index		objects
@@ -248,10 +217,9 @@ $ cd ..
 ```
 
 To send your local commits to the remote repository hosted on GitHub, use
-`git push`. If you did not enable the [credential cache](https://help.github.com/articles/caching-your-github-password-in-git/), Git will ask for your
-username and password.
+`git push`. If you did not enable the [credential cache](https://help.github.com/articles/caching-your-github-password-in-git/), Git will ask for your username and password.
 
-```
+```bash
 $ git push
 Counting objects: 3, done.
 Delta compression using up to 4 threads.
@@ -264,16 +232,16 @@ To https://github.com/umass-cs-326/workshop-1-git-CS326Student.git
 
 Now, your README changes are visible on GitHub.com:
 
-<img src="../../img/readme_edit_push.png" width="100%" />
+<img src="../images/readme_edit_push.png" width="100%" />
 
 If you click on the *3 commits* text above the file listing, GitHub will
 show you a neat listing of repository commits:
 
-<img src="../../img/commit_log.png" width="100%" />
+<img src="../images/commit_log.png" width="100%" />
 
 Clicking on each will show a `diff` of the changes you made:
 
-<img src="../../img/commit_diff.png" width="100%" />
+<img src="../images/commit_diff.png" width="100%" />
 
 In general, you should always `push` your changes immediately after you `commit`
 them, especially on group projects!
@@ -284,12 +252,12 @@ Let's add a new file to the repository. Create a new file called `data.txt`,
 and put some text into it. (In the Atom Editor, you can create new files by
   right clicking on the left file listing, and clicking "New File".)
 
-<img src="../../img/data_contents.png" width="100%" />
+<img src="../images/data_contents.png" width="100%" />
 
 If you run `git commit -a`, Git will tell you that nothing has changed...
 and that `data.txt` is an *untracked* file:
 
-```
+```bash
 $ git commit -a
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -308,7 +276,7 @@ Now, we need to tell Git to commit our changes to the now-tracked file.
 Run `git commit -a` to actually commit the new file, then run `git push` to send
 the changes off to GitHub. You should see the new commit at GitHub.com:
 
-<img src="../../img/turtles.png" width="100%" />
+<img src="../images/turtles.png" width="100%" />
 
 # Step 06: `mv` a file
 
@@ -338,18 +306,18 @@ you are working in a team? How do you grab changes that others have pushed to
 GitHub?
 
 To answer this question, return to your **class folder** and make a second local
-repository clone of your Workshop 1 repository. This time, tell the `git clone`
-command to clone the repository into the folder `workshop-1-git-second-clone`:
+repository clone of your Workshop 2 repository. This time, tell the `git clone`
+command to clone the repository into the folder `workshop2-second-clone`:
 
-```
-$ git clone https://github.com/umass-cs-326/workshop-1-git-CS326Student.git workshop-1-git-second-clone
-Cloning into 'workshop-1-git-second-clone'...
+```bash
+$ git clone https://github.com/GITHUB-USERNAME/Workshop2.git Workshop2-second-clone
+Cloning into 'Workshop2-second-clone'...
 remote: Counting objects: 14, done.
 remote: Compressing objects: 100% (11/11), done.
 remote: Total 14 (delta 2), reused 13 (delta 1), pack-reused 0
 Unpacking objects: 100% (14/14), done.
 Checking connectivity... done.
-$ cd workshop-1-git-second-clone/
+$ cd Workshop2-second-clone/
 $ ls
 README.md	data.dat	password.txt
 ```
@@ -367,7 +335,7 @@ remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/umass-cs-326/workshop-1-git-CS326Student
+From https://github.com/GITHUB-USERNAME/Workshop2.git
    4c8bad6..1a58830  master     -> origin/master
 Updating 4c8bad6..1a58830
 Fast-forward
@@ -376,7 +344,7 @@ Fast-forward
 ```
 
 [Take a screenshot](http://www.take-a-screenshot.org) of your terminal output
-from `git pull`, and include it in your Workshop 1 submission.
+from `git pull`, and include it in your Workshop 2 submission.
 
 Note: If Git reports that your repository is "Already up-to-date", you either:
 
@@ -393,10 +361,10 @@ When you use Git in a team setting, you are going to encounter a *merge
 conflict*. Merge conflicts occur when you try to push local changes to GitHub
 that conflict with changes other people have already pushed to GitHub. We'll
 illustrate merge conflicts by having you create one using your two local
-clones of Workshop 1.
+clones of Workshop 2.
 
 In your first clone of Workshop 1, edit the first line of `README.md` to say
-`Workshop 1: Git` instead of `Workshop1`. Then, type `git diff` for fun, and
+`Workshop 2: Git` instead of `Workshop2`. Then, type `git diff` for fun, and
 `git` will show you all of the changes you've made that you haven't committed
 yet:
 
@@ -430,21 +398,21 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 380 bytes | 0 bytes/s, done.
 Total 3 (delta 1), reused 0 (delta 0)
-To https://github.com/umass-cs-326/workshop-1-git-CS326Student.git
+To https://github.com/GITHUB-USERNAME/Workshop2.git
    1a58830..36f4ca6  master -> master
 ```
 
-Now, navigate to your second clone of the Workshop 1 repository.
+Now, navigate to your second clone of the Workshop 2 repository.
 In the second clone, **do not pull down your change**. Instead, edit the first
-line of `README.md` to say `Workshop 1`. (Note that this is different from the
+line of `README.md` to say `Workshop-2`. (Note that this is different from the
   first edit we made.) Commit the change with `git commit -a`, and try to
   `git push` the change to GitHub. It will fail!
 
 ```
 $ git push
-To https://github.com/umass-cs-326/workshop-1-git-CS326Student.git
+To https://github.com/GITHUB-USERNAME/Workshop2.git
  ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'https://github.com/umass-cs-326/workshop-1-git-CS326Student.git'
+error: failed to push some refs to 'https://github.com/GITHUB-USERNAME/Workshop2.git
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -459,13 +427,13 @@ Internals (fetch first? fast-forwards?! refs?!?!?), but the important bit is the
 Run `git pull` to grab these changes, and Git will report that there is a
 conflict:
 
-```
+```bash
 $ git pull
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/umass-cs-326/workshop-1-git-CS326Student
+From https://github.com/GITHUB-USERNAME/Workshop2
    1a58830..36f4ca6  master     -> origin/master
 Auto-merging README.md
 CONFLICT (content): Merge conflict in README.md
@@ -483,9 +451,9 @@ conflicting changes are:
 
 ```
 <<<<<<< HEAD
-# Workshop 1
+# Workshop-2
 =======
-# Workshop 1: Git
+# Workshop 2: Git
 >>>>>>> 36f4ca627ea17f02450c5f6ded877dafb2d86d43
 The first workshop of CS326, which covers how to use Git in a group setting.
 
@@ -512,7 +480,7 @@ Here, though, one title is better/more specific than the other; edit
 `README.md` so it looks like the following:
 
 ```
-# Workshop 1: Git
+# Workshop 2: Git
 The first workshop of CS326, which covers how to use Git in a group setting.
 
 It's pretty useful.
@@ -526,14 +494,14 @@ the commit to GitHub.
 
 ```
 $ git commit -a
-[master df7395f] Merge branch 'master' of https://github.com/umass-cs-326/workshop-1-git-CS326Student
+[master df7395f] Merge branch 'master' of https://github.com/GITHUB-USERNAME/Workshop2
 $ git push
 Counting objects: 4, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (4/4), done.
 Writing objects: 100% (4/4), 605 bytes | 0 bytes/s, done.
 Total 4 (delta 1), reused 0 (delta 0)
-To https://github.com/umass-cs-326/workshop-1-git-CS326Student.git
+To https://github.com/GITHUB-USERNAME/Workshop2
    36f4ca6..df7395f  master -> master
 ```
 
@@ -571,9 +539,9 @@ changes that your Git repository no longer has:
 
 ```
 $ git push
-To https://github.com/umass-cs-326/workshop-1-git-CS326Student.git
+To https://github.com/GITHUB-USERNAME/Workshop2.git
  ! [rejected]        master -> master (non-fast-forward)
-error: failed to push some refs to 'https://github.com/umass-cs-326/workshop-1-git-CS326Student.git'
+error: failed to push some refs to 'https://github.com/GITHUB-USERNAME/Workshop2.git'
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Integrate the remote changes (e.g.
 hint: 'git pull ...') before pushing again.
@@ -586,7 +554,7 @@ will go through as a forced update:
 ```
 $ git push -f
 Total 0 (delta 0), reused 0 (delta 0)
-To https://github.com/umass-cs-326/workshop-1-git-CS326Student.git
+To https://github.com/GITHUB-USERNAME/Workshop2.git
  + df7395f...1baa43d master -> master (forced update)
 ```
 
@@ -594,6 +562,7 @@ Now, go take a look at your repository on GitHub. **All of your commits are
 gone.**
 
 **Take a screenshot of your empty repository on GitHub; you will include it in your submission.**
+
 Take a moment to imagine
 that it's 4AM, you typed in some random Git commands you saw on the internet,
 applied them to your group project repository, and now your entire GitHub
@@ -610,7 +579,7 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (20/20), done.
 Writing objects: 100% (21/21), 2.47 KiB | 0 bytes/s, done.
 Total 21 (delta 4), reused 0 (delta 0)
-To https://github.com/umass-cs-326/workshop-1-git-CS326Student.git
+To https://github.com/GITHUB-USERNAME/Workshop2.git
    1baa43d..df7395f  master -> master
 ```
 
@@ -637,7 +606,7 @@ back in time and change history. It's quite powerful.
 If you look at your commit listing on GitHub, you'll notice that `password.txt`
 was added in the following commit:
 
-<img src="../../img/bad_commit.png" width="100%" />
+<img src="../images/bad_commit.png" width="100%" />
 
 `9e1bd06a447f86d7dae56c61ccad00b51021c9b6` is the hash of this commit. We can
 tell Git that we want to edit history starting at this commit using the
@@ -662,7 +631,7 @@ Git will `pick` every commit, which re-applies the commit as-is.
 We need to change the commit that added the password. Tell Git that we want to
 edit the commit `9e1bd06`:
 
-<img src="../../img/git_rebase.png" />
+<img src="../images/git_rebase.png" />
 
 Save the file, and close Atom Editor. You'll see the following in your terminal:
 
@@ -752,7 +721,7 @@ commit, and tell the rebase to continue:
 
 ```
 $ git commit -a
-[detached HEAD a9cf82c] Merge branch 'master' of https://github.com/umass-cs-326/workshop-1-git-CS326Student
+[detached HEAD a9cf82c] Merge branch 'master' of https://github.com/GITHUB-USERNAME/Workshop2
 $ git rebase --continue
 Successfully rebased and updated refs/heads/master.
 ```
@@ -767,22 +736,22 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (18/18), done.
 Writing objects: 100% (19/19), 2.19 KiB | 0 bytes/s, done.
 Total 19 (delta 4), reused 0 (delta 0)
-To https://github.com/umass-cs-326/workshop-1-git-CS326Student
+To https://github.com/GITHUB-USERNAME/Workshop2
  + df7395f...a9cf82c master -> master (forced update)
 ```
 
 **Check your commit history on GitHub to double check that everything looks OK.**
 You should have 9 commits that look something like the following:
 
-<img src="../../img/git_commits_post_rebase.png" width="100%" />
+<img src="../images/git_commits_post_rebase.png" width="100%" />
 
 You should also verify that `password.txt` is no longer in the file listing:
 
-<img src="../../img/no_password.png" width="100%" />
+<img src="../images/no_password.png" width="100%" />
 
 ... and that the original password commit is now empty:
 
-<img src="../../img/empty_commit.png" width="100%" />
+<img src="../images/empty_commit.png" width="100%" />
 
 If anything looks amiss, return to your second workshop clone, perform a
 `git push -f` to force push the repository's contents prior to the rebase,
@@ -807,12 +776,12 @@ Git's `revert` command creates a new commit that *undoes* a specified commit.
 It is not *destructive* like `rebase`, so it is safe to use.
 
 Let's create a commit that we want to `revert`. Open up `README.md`, delete
-the line containing the title (`# Workshop 1: Git`), commit the change, and
+the line containing the title (`# Workshop 2: Git`), commit the change, and
 push it to GitHub.
 
 Now, your repository should look something like the following:
 
-<img src="../../img/no_title_readme.png" width="100%" />
+<img src="../images/no_title_readme.png" width="100%" />
 
 Yuck, that looks worse than before. We should restore the title!
 
@@ -841,18 +810,18 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 359 bytes | 0 bytes/s, done.
 Total 3 (delta 1), reused 0 (delta 0)
-To https://github.com/umass-cs-326/workshop-1-git-CS326Student
+To https://github.com/GITHUB-USERNAME/Workshop2
    5cea586..8555894  master -> master
 ```
 
 ...and verify that the README title is restored!:
 
-<img src="../../img/title_readme.png" width="100%" />
+<img src="../images/title_readme.png" width="100%" />
 
 Also, look at the commit view. Notice that `revert` did not remove the old
 commit; it merely added a new one that negated the changes from the old commit:
 
-<img src="../../img/revert_commits.png" width="100%" />
+<img src="../images/revert_commits.png" width="100%" />
 
 # Step 12: `add` your screenshots to the repository
 
@@ -871,14 +840,12 @@ Create a `commit` for this change, and `push` it to GitHub.
 
 Your GitHub repository should have 12 commits, like these:
 
-<img src="../../img/workshop1_commits_final.png" width="100%">
+<img src="../images/workshop1_commits_final.png" width="100%">
 
 If it does not, you may have missed a step! In that case, you could try rebasing
 your repository back to the step you messed up and try again.
 
-You do not need to do anything to submit your assignment, since it is already
-on GitHub! We will `clone` your repository on the due date and time, and grade
-whatever we clone at that time.
+You must submit the URL of your Workshop2 GitHub repository to Moodle. Visit Moodle, find the associated Workshop 2 activity, and provide your URL. Make sure your Workshop2 repository is public so we can clone your repository and evaluate your work.
 
 ## Further reading: Branching, pull requests, and other topics
 
