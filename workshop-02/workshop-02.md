@@ -23,7 +23,7 @@ commands that developers actually use on a regular basis.
 
 Let's get started!
 
-*Small note: We refer to this workshop as "Workshop 1" in the text and repository, but it is really Workshop 2. We renamed it at the last minute and were too lazy to fix everything once we noticed the mistake.*
+*Small note: you may notice that some of these images refer to Workshop 1. It is really Workshop 2. We renamed it at the last minute and haven't had a chance to fix everyone once we noticed the mistake.*
 
 # Grading Rubric
 
@@ -79,11 +79,11 @@ use for that workshop.
 
 To get started you need to *fork* the GitHub repository for Workshop 2. To do that click on the "Fork" button, it is on the upper right-hand part of the github page next to "Unwatch" and "Star":
 
-<img src="../images/fork-workshop-02.png" width="100%" />
+<img src="../images/fork-workshop-02.png" width="50%" />
 
 After you click on the "Fork" button you will be asked "Where should we fork this repository":
 
-<img src="../images/where-fork-workshop-02.png" width="100%" />
+<img src="../images/where-fork-workshop-02.png" width="50%" />
 
 You should click on the location that matches your GitHub username. After you do so you will need to wait for GitHub to fork this repository to your own GitHub user account. You will see something like this:
 
