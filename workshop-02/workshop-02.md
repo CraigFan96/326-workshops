@@ -85,7 +85,7 @@ If you are not in the class and want to follow along, you can [fork the GitHub r
 After clicking that link, Classroom for GitHub will request access to the
 email address associated with your GitHub account:
 
-<img src="../../img/classroom_authorize.png" width="100%" />
+<img src="../images/classroom_authorize.png" width="100%" />
 
 *(Note: If you have not yet confirmed your GitHub account's email address,
 GitHub will tell you to do that first!)*
